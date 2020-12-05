@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\FeedbackController::class,'index']);
+
+Route::post('/feedback', [\App\Http\Controllers\FeedbackController::class, 'store']);
+
+Route::get('/test', [\App\Http\Controllers\FeedbackController::class,'test']);

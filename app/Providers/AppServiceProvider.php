@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(\App\Classes\SaverManager::class, function ($app) {
+            return new \App\Classes\SaverManager($app);
+        });
     }
 
     /**
